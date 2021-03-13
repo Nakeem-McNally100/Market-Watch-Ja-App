@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfilePage">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="95dp"
+        android:layout_height="82dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_person"
+        tools:ignore="MissingConstraints,VectorDrawableCompat"
+        tools:layout_editor_absoluteY="188dp" />
+
+    <TextView
+        android:id="@+id/profileheading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.307" />
+
+    <TextView
+        android:id="@+id/profilename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="John Doe"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#BFBDBD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menubotton" />
+
+    <Button
+        android:id="@+id/accountprofilebtn"
+        android:layout_width="352dp"
+        android:layout_height="wrap_content"
+        android:background="#BFBDBD"
+        android:layout_marginTop="84dp"
+        android:drawableLeft="@drawable/ic_person"
+        android:text="Account"
+        android:textAlignment="viewStart"
+        android:paddingStart="12dp"
+        android:paddingLeft="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilename"
+        tools:ignore="RtlCompat" />
+
+    <Button
+        android:background="#BFBDBD"
+        android:id="@+id/settingprofilebtn"
+        android:layout_width="352dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableLeft="@drawable/ic_settings"
+        android:text="Setting"
+        android:textAlignment="viewStart"
+        tools:ignore="RtlCompat"
+        android:paddingStart="12dp"
+        android:paddingLeft="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accountprofilebtn" />
+
+    <Button
+        android:id="@+id/helpprofilebtn"
+        android:layout_width="352dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Help"
+        android:textAlignment="viewStart"
+        tools:ignore="RtlCompat"
+        android:paddingStart="12dp"
+        android:paddingLeft="12dp"
+        android:background="#BFBDBD"
+        android:drawableLeft="@drawable/ic_help"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingprofilebtn" />
+
+    <Button
+        android:id="@+id/logOutprofilebtn"
+        android:layout_width="352dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Log Out"
+        android:textAlignment="viewStart"
+        tools:ignore="RtlCompat"
+        android:background="#BFBDBD"
+        android:paddingStart="12dp"
+        android:paddingLeft="12dp"
+        android:drawableLeft="@drawable/ic_exit_to_app_"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/helpprofilebtn"
+         />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
