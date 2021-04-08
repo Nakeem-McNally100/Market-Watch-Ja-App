@@ -5,17 +5,21 @@
     android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradientbk"
     tools:context=".ProfilePage">
+
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="95dp"
         android:layout_height="82dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13999999"
         app:srcCompat="@drawable/ic_person"
-        tools:ignore="MissingConstraints,VectorDrawableCompat"
-        tools:layout_editor_absoluteY="188dp" />
+        tools:ignore="MissingConstraints,VectorDrawableCompat" />
 
     <TextView
         android:id="@+id/profileheading"
@@ -23,100 +27,108 @@
         android:layout_height="wrap_content"
         android:text="Profile"
         android:textSize="24sp"
+        android:textColor="#00E2FF"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.307" />
+        app:layout_constraintVertical_bias="0.296" />
 
     <TextView
         android:id="@+id/profilename"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="John Doe"
+        android:textColor="#00E2FF"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#BFBDBD"
+        android:background="#6B52DD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/menubotton" />
 
     <Button
         android:id="@+id/accountprofilebtn"
-        android:layout_width="352dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:background="#BFBDBD"
-        android:layout_marginTop="84dp"
+        android:background="@drawable/bottoncolored"
         android:drawableLeft="@drawable/ic_person"
-        android:text="Account"
-        android:textAlignment="viewStart"
         android:paddingStart="12dp"
         android:paddingLeft="12dp"
+        android:text="Account"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profilename"
+        app:layout_constraintVertical_bias="0.120000005"
         tools:ignore="RtlCompat" />
 
     <Button
-        android:background="#BFBDBD"
         android:id="@+id/settingprofilebtn"
-        android:layout_width="352dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:background="@drawable/bottoncolored"
         android:drawableLeft="@drawable/ic_settings"
-        android:text="Setting"
-        android:textAlignment="viewStart"
-        tools:ignore="RtlCompat"
         android:paddingStart="12dp"
         android:paddingLeft="12dp"
+        android:text="Setting"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/accountprofilebtn" />
+        app:layout_constraintTop_toBottomOf="@+id/accountprofilebtn"
+        app:layout_constraintVertical_bias="0.04000002"
+        tools:ignore="RtlCompat" />
 
     <Button
         android:id="@+id/helpprofilebtn"
-        android:layout_width="352dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Help"
-        android:textAlignment="viewStart"
-        tools:ignore="RtlCompat"
+        android:background="@drawable/bottoncolored"
+        android:drawableLeft="@drawable/ic_help"
         android:paddingStart="12dp"
         android:paddingLeft="12dp"
-        android:background="#BFBDBD"
-        android:drawableLeft="@drawable/ic_help"
+        android:text="Help"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settingprofilebtn" />
+        app:layout_constraintTop_toBottomOf="@+id/settingprofilebtn"
+        app:layout_constraintVertical_bias="0.06999999"
+        tools:ignore="RtlCompat" />
 
     <Button
         android:id="@+id/logOutprofilebtn"
-        android:layout_width="352dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Log Out"
-        android:textAlignment="viewStart"
-        tools:ignore="RtlCompat"
-        android:background="#BFBDBD"
+        android:background="@drawable/bottoncolored"
+        android:drawableLeft="@drawable/ic_exit_to_app_"
         android:paddingStart="12dp"
         android:paddingLeft="12dp"
-        android:drawableLeft="@drawable/ic_exit_to_app_"
+        android:text="Log Out"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/helpprofilebtn"
-         />
+        app:layout_constraintVertical_bias="0.110000014"
+        tools:ignore="RtlCompat" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

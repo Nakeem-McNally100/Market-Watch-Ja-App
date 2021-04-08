@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradientbk"
     tools:context=".LogInScreen">
 
 
@@ -54,32 +55,53 @@
         android:textSize="12sp"
         android:textStyle="bold"
 
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="491dp" />
+        app:layout_constraintTop_toBottomOf="@+id/loginpassword"
+        app:layout_constraintVertical_bias="0.139" />
 
     <TextView
         android:id="@+id/loginheading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign In"
+        android:textColor="#00E2FF"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/loginpassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="45dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.119" />
 
     <TextView
         android:id="@+id/loginsubheading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="WELCOME BACK"
+        android:textColor="#00E2FF"
         android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/loginpassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="77dp" />
+        app:layout_constraintTop_toBottomOf="@+id/loginheading"
+        app:layout_constraintVertical_bias="0.0" />
 
-
+    <Button
+        android:id="@+id/createAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00717171"
+        android:text="Sign Up for MarketWatchJa"
+        android:textColor="#00E2FF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/continueloginbtn"
+        app:layout_constraintVertical_bias="0.736" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

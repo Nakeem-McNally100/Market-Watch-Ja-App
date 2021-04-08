@@ -6,11 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ProfilePage extends AppCompatActivity {
 
+
+    Button logOut;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +23,7 @@ public class ProfilePage extends AppCompatActivity {
 
 
         ///Initialise and assign variables
+        logOut = (Button) findViewById(R.id.logOutprofilebtn);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
@@ -46,5 +52,21 @@ public class ProfilePage extends AppCompatActivity {
                 return false;
             }
         });
+
+
+
+        logOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(ProfilePage.this, "Logging Out, come back later.", Toast.LENGTH_SHORT).show();
+                getOut();
+            }
+        });
+    }
+
+
+    public void getOut(){
+        Intent intent = new Intent(this,LogInScreen.class);
+        startActivity(intent);
     }
 }

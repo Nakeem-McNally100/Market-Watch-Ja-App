@@ -5,6 +5,7 @@
     android:id="@+id/signupscreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradientbk"
     tools:context=".MainActivity">
 
     <EditText
@@ -20,6 +21,7 @@
         android:paddingStart="12dp"
         android:paddingLeft="12dp"
         android:paddingEnd="12dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
@@ -36,10 +38,12 @@
         android:paddingStart="12dp"
         android:paddingLeft="12dp"
         android:paddingEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints,RtlCompat"
-        tools:layout_editor_absoluteY="145dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.301"
+        tools:ignore="MissingConstraints,RtlCompat" />
 
     <EditText
         android:id="@+id/email"
@@ -78,7 +82,7 @@
         tools:ignore="MissingConstraints,RtlCompat" />
 
     <Button
-        android:id="@+id/btn"
+        android:id="@+id/conbtn"
         android:layout_width="299dp"
         android:layout_height="48dp"
         android:background="@drawable/custom_btn"
@@ -87,28 +91,38 @@
         android:textSize="12sp"
         android:textStyle="bold"
 
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="491dp" />
+        app:layout_constraintTop_toBottomOf="@+id/comfirmpassword"
+        app:layout_constraintVertical_bias="0.551" />
 
     <TextView
         android:id="@+id/accountheading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register Account"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold"
+        android:textColor="#00E2FF"
+        app:layout_constraintBottom_toTopOf="@+id/subheading"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="45dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/subheading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enter your details to continue"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:textColor="#00E2FF"
+        app:layout_constraintBottom_toTopOf="@+id/fullname"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="77dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.504" />
 </androidx.constraintlayout.widget.ConstraintLayout>

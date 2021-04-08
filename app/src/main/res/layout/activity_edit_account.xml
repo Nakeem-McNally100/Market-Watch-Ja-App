@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradientbk"
     tools:context=".EditAccount">
 
 
@@ -100,8 +101,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Edit Account"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold"
+        android:textColor="#00E2FF"
         app:layout_constraintBottom_toTopOf="@+id/editsubheading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
