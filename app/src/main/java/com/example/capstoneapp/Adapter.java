@@ -1,6 +1,7 @@
 package com.example.capstoneapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
@@ -44,8 +46,8 @@ public class Adapter extends RecyclerView.Adapter <Adapter.MyViewHolder>{
     public void onBindViewHolder(@NonNull MyViewHolder holders, int position) {
         final MyViewHolder holder = holders;
         Articles model = articles.get(position);
-
         RequestOptions requestOptions = new RequestOptions();
+
         requestOptions.placeholder(Utils.getRandomDrawbleColor());
         requestOptions.error(Utils.getRandomDrawbleColor());
         requestOptions.diskCacheStrategy(DiskCacheStrategy.ALL);
@@ -74,8 +76,29 @@ public class Adapter extends RecyclerView.Adapter <Adapter.MyViewHolder>{
         holder.publishedAt.setText(Utils.DateFormat(model.getPublishedAt()));
         holder.author.setText(model.getAuthor());
 
+     /*   final String  modeltitle = model.getTitle();
+        final String  modelurl = model.getUrl();
+        final String  modelimg = model.getUrlToImage();
+        final String modeldate = model.getPublishedAt();
+        final String modelsourse = model.getSource().getName();
+        final String modelauthor = model.getAuthor();
 
 
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, NewpaperScreen.class);
+                //Articles article = articles.get(position);
+                intent.putExtra("url", modelurl);
+                intent.putExtra("title", modeltitle);
+                intent.putExtra("img",modelimg);
+                intent.putExtra("date", modeldate);
+                intent.putExtra("source", modelsourse);
+                intent.putExtra("author", modelauthor);
+                context.startActivity(intent);
+            }
+        });
+*/
 
 
 
@@ -99,6 +122,7 @@ public class Adapter extends RecyclerView.Adapter <Adapter.MyViewHolder>{
         TextView title,description,author,publishedAt,source, time;
         ImageView imageView;
         ProgressBar progressBar;
+        CardView cardView;
         OnItemClickListener onItemClickListener;
 
         public MyViewHolder(@NonNull View itemView, OnItemClickListener onItemClickListener) {
@@ -112,6 +136,7 @@ public class Adapter extends RecyclerView.Adapter <Adapter.MyViewHolder>{
             time = itemView.findViewById(R.id.time);
             imageView = itemView.findViewById(R.id.image);
             progressBar = itemView.findViewById(R.id.progressbar);
+            cardView = itemView.findViewById(R.id.card);
 
             this.onItemClickListener = onItemClickListener;
         }

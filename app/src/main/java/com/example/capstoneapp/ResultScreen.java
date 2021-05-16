@@ -142,7 +142,7 @@ public class ResultScreen extends AppCompatActivity  {
                                 sentimentsubjectivity = sentiments.getInt("subjective");
                                 sentimentobjectivity = sentiments.getInt("objective");
                                 sentimenttotaltweets = sentiments.getInt("Totaltweets");
-
+                                
                                ////////////////////////
                                 double freecashflowint = health.getDouble("free cashflow");
                                 double operatingcashflowint = health.getDouble("operating cashflow");

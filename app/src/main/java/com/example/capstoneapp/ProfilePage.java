@@ -16,6 +16,8 @@ public class ProfilePage extends AppCompatActivity {
 
 
     Button logOut;
+    Button help;
+    Button editprofile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,8 @@ public class ProfilePage extends AppCompatActivity {
 
         ///Initialise and assign variables
         logOut = (Button) findViewById(R.id.logOutprofilebtn);
+        help = (Button) findViewById(R.id.helpprofilebtn);
+        editprofile = (Button) findViewById(R.id.accountprofilebtn);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
@@ -60,6 +64,23 @@ public class ProfilePage extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(ProfilePage.this, "Logging Out, come back later.", Toast.LENGTH_SHORT).show();
                 getOut();
+            }
+        });
+
+
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfilePage.this,HelpScreen.class);
+                startActivity(intent);
+            }
+        });
+
+        editprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfilePage.this,EditAccount.class);
+                startActivity(intent);
             }
         });
     }

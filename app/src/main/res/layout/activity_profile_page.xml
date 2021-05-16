@@ -39,7 +39,7 @@
         android:id="@+id/profilename"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="John Doe"
+        android:text=""
         android:textColor="#00E2FF"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
@@ -78,7 +78,7 @@
         app:layout_constraintTop_toBottomOf="@+id/profilename"
         app:layout_constraintVertical_bias="0.120000005"
         tools:ignore="RtlCompat" />
-
+<!--
     <Button
         android:id="@+id/settingprofilebtn"
         android:layout_width="300dp"
@@ -95,7 +95,7 @@
         app:layout_constraintTop_toBottomOf="@+id/accountprofilebtn"
         app:layout_constraintVertical_bias="0.04000002"
         tools:ignore="RtlCompat" />
-
+-->
     <Button
         android:id="@+id/helpprofilebtn"
         android:layout_width="300dp"
@@ -109,7 +109,7 @@
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settingprofilebtn"
+        app:layout_constraintTop_toBottomOf="@+id/accountprofilebtn"
         app:layout_constraintVertical_bias="0.06999999"
         tools:ignore="RtlCompat" />
 

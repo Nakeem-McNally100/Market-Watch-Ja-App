@@ -41,7 +41,7 @@ public class NewsFeedScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_feed_screen);
-
+        getSupportActionBar().setTitle("Market Watch Jamaica");
         recyclerView = findViewById(R.id.recyclerview);
         layoutManager = new LinearLayoutManager(NewsFeedScreen.this);
         recyclerView.setLayoutManager(layoutManager);

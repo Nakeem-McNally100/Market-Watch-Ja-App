@@ -55,6 +55,7 @@ public class NewpaperScreen extends AppCompatActivity implements  AppBarLayout.O
         date = findViewById(R.id.date);
         time = findViewById(R.id.time);
         title = findViewById(R.id.title);
+        apptitle = findViewById(R.id.title_on_appbar);
 
         Intent intent = getIntent();
         murl = intent.getStringExtra("url");
@@ -69,9 +70,9 @@ public class NewpaperScreen extends AppCompatActivity implements  AppBarLayout.O
         requestOptions.error(Utils.getRandomDrawbleColor());
         Glide.with(this).load(mimg).apply(requestOptions).transition(DrawableTransitionOptions.withCrossFade()).into(imageView);
 
-        apptitle.setText(msource);
-        appsubtitle.setText(murl);
-        date.setText(mdate);
+        apptitle.setText("");
+        appsubtitle.setText("");
+        date.setText("");
         title.setText(mtitle);
 
         String author = null;

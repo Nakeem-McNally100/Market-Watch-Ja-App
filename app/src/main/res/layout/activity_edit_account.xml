@@ -8,12 +8,14 @@
     tools:context=".EditAccount">
 
 
+
+
     <EditText
 
         android:id="@+id/editcomfirmpassword"
         android:layout_width="299dp"
         android:layout_height="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/customtextfield"
         android:drawableRight="@drawable/ic_lock"
         android:hint="Confirm Password"
@@ -21,6 +23,7 @@
         android:paddingStart="12dp"
         android:paddingLeft="12dp"
         android:paddingEnd="12dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editpassword"
@@ -30,7 +33,6 @@
         android:id="@+id/editfullname"
         android:layout_width="299dp"
         android:layout_height="48dp"
-        android:layout_marginTop="124dp"
         android:background="@drawable/customtextfield"
         android:drawableRight="@drawable/ic_person"
         android:hint="Full Name"
@@ -38,16 +40,18 @@
         android:paddingStart="12dp"
         android:paddingLeft="12dp"
         android:paddingEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editsubheading"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.301"
         tools:ignore="MissingConstraints,RtlCompat" />
 
     <EditText
         android:id="@+id/editemail"
         android:layout_width="299dp"
         android:layout_height="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/customtextfield"
         android:drawableRight="@drawable/ic_email"
         android:hint="Email"
@@ -63,7 +67,7 @@
         android:id="@+id/editpassword"
         android:layout_width="299dp"
         android:layout_height="48dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/customtextfield"
         android:drawableRight="@drawable/ic_lock"
         android:drawablePadding="12dp"
@@ -73,8 +77,9 @@
         android:paddingLeft="12dp"
         android:paddingEnd="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/editemail"
         tools:ignore="MissingConstraints,RtlCompat" />
 
@@ -82,43 +87,46 @@
         android:id="@+id/editbtn"
         android:layout_width="299dp"
         android:layout_height="48dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="120dp"
         android:background="@drawable/custom_btn"
         android:text="Edit Account"
         android:textColor="#0E0D0D"
-
         android:textSize="12sp"
         android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/comfirmpassword" />
+        app:layout_constraintTop_toBottomOf="@+id/editcomfirmpassword"
+        app:layout_constraintVertical_bias="0.551" />
 
     <TextView
-        android:id="@+id/editheading"
+        android:id="@+id/accountheading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:text="Edit Account"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="#00E2FF"
-        app:layout_constraintBottom_toTopOf="@+id/editsubheading"
+        app:layout_constraintBottom_toTopOf="@+id/subheading"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/editsubheading"
+        android:id="@+id/subheading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:textColor="#00E2FF"
+        app:layout_constraintBottom_toTopOf="@+id/editfullname"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="77dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.504" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

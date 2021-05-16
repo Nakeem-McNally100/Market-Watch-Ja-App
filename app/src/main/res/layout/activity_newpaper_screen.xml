@@ -209,12 +209,13 @@ tools:context=".NewpaperScreen">
     android:layout_marginBottom="410dp"
     android:layout_height="wrap_content"
     tools:ignore="UnusedAttribute">
+    <!--
     <ImageView
         android:src="@drawable/ic_baseline_date_range_24"
         android:layout_width="18dp"
         android:layout_height="18dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"/>
+        android:layout_marginRight="5dp"/> -->
     <TextView
         android:textColor="#606060"
         android:id="@+id/date"
