@@ -37,7 +37,7 @@ public class ProfilePage extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()){
                     case R.id.searchbtn:
-                        startActivity(new Intent( getApplicationContext(),SearchScreen.class));
+                        startActivity(new Intent( getApplicationContext(),SearchScreenV2.class));
                         overridePendingTransition(0,0);
                         return true;
 

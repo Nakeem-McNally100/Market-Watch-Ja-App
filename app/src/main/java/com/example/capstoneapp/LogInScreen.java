@@ -58,7 +58,7 @@ public class LogInScreen extends AppCompatActivity {
                             public void onResponse(String response) {
                                 // Display the first 500 characters of the response string.
                               //  textView.setText("Response is: "+ response.substring(0,500));
-                                 Toast.makeText(LogInScreen.this, response, Toast.LENGTH_SHORT).show();
+                                 Toast.makeText(LogInScreen.this, "Welcome to Market Watch JA", Toast.LENGTH_SHORT).show();
                                 logInEmail.setText("");
                                 logInPassword.setText("");
                                  OpenNewsFeed();
@@ -67,8 +67,8 @@ public class LogInScreen extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
 
-                        Toast.makeText(LogInScreen.this, "Oops didn't work, try again later @ http://192.168.1.7:5000/user/"+logInEmail.getText().toString() , Toast.LENGTH_SHORT).show();
-                     //   textView.setText("That didn't work!");
+                        Toast.makeText(LogInScreen.this, "Oops didn't work. Invalid Username and/or Password" , Toast.LENGTH_SHORT).show();
+
                     }
                 });
 

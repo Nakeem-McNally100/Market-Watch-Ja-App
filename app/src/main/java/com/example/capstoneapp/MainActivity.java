@@ -53,7 +53,10 @@ public class MainActivity extends AppCompatActivity {
     public void OpenApp(){
         //Intent intent = new Intent(this, ResultScreen.class);
         //startActivity(intent);
-        // if(password.getText().toString() == confirmpassword.getText().toString()) {
+        String str1 = password.getText().toString();
+        String str2 = confirmpassword.getText().toString();
+
+         if(str1.equals(str2)) {
 
             Random randowNum = new Random();
             String userid = "User" + String.valueOf(randowNum.nextInt(2000));
@@ -80,16 +83,16 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onErrorResponse(VolleyError error) {
 
-                    Toast.makeText(MainActivity.this, "Oops didn't work, try again later @ http://192.168.1.7:5000/user/" + email.getText().toString(), Toast.LENGTH_SHORT).show();
-                    //   textView.setText("That didn't work!");
+                    Toast.makeText(MainActivity.this, "Oops didn't work, try again", Toast.LENGTH_SHORT).show();
+
                 }
             });
 
-// Add the request to the RequestQueue.
+            // Add the request to the RequestQueue.
             queue.add(stringRequest);
-       // }else{
-       //     Toast.makeText(MainActivity.this, "Oops didn't work,check your password", Toast.LENGTH_SHORT).show();
-        //}
+        }else{
+            Toast.makeText(MainActivity.this, "Oops didn't work, check your password", Toast.LENGTH_SHORT).show();
+        }
     }
 
 

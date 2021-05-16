@@ -3,4 +3,56 @@
     <string name="title_activity_main_view">MainView</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string-array name="mycompanies">
+        <item>Abbott Laboratories</item>
+        <item>AbbVie</item>
+        <item>Accenture</item>
+        <item>Adobe</item>
+        <item>Alibaba Group</item>
+        <item>Alphabet</item>
+        <item>Alphabetl</item>
+        <item>Amazon.com</item>
+        <item>Apple</item>
+        <item>ASML</item>
+        <item>AT&amp;T</item>
+        <item>Bank of America Corporation</item>
+        <item>BHP Group Limited</item>
+        <item>Broadcom</item>
+        <item>Chevron Corporation</item>
+        <item>Cisco Systems</item>
+        <item>Coca-Cola Company</item>
+        <item>Comcast Corporation</item>
+        <item>Danaher Corporation</item>
+        <item>Exxon Mobil Corporation</item>
+        <item>Facebook</item>
+        <item>Home Depot</item>
+        <item>Intel Corporation</item>
+        <item>Johnson &amp; Johnson</item>
+        <item>JP Morgan Chase &amp; Co.</item>
+        <item>Mastercard</item>
+        <item>Merck &amp; Company</item>
+        <item>Microsoft Corporation</item>
+        <item>Netflix</item>
+        <item>New Oriental Education &amp; Techn</item>
+        <item>Nike</item>
+        <item>Novartis AG</item>
+        <item>NVIDIA Corporation</item>
+        <item>Oracle Corporation</item>
+        <item>PayPal</item>
+        <item>PepsiCo</item>
+        <item>Pfizer</item>
+        <item>Procter &amp; Gamble Company</item>
+        <item>Salesforce.com</item>
+        <item>Taiwan Semiconductor Manufactu</item>
+        <item>Tesla</item>
+        <item>Thermo Fisher Scientific</item>
+        <item>Toyota Motor Corporation</item>
+        <item>United Parcel Service</item>
+        <item>UnitedHealth Group</item>
+        <item>Verizon Communications</item>
+        <item>Visa</item>
+        <item>Walmart</item>
+        <item>Walt Disney Company</item>
+        <item>Wells Fargo &amp; Company</item>
+    </string-array>
 </resources>

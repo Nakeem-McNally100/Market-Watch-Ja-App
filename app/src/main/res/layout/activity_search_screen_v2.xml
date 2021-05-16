@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradientbk"
+    tools:context=".SearchScreenV2"
+    android:orientation="vertical">
+
+
+    <ListView
+        android:id="@+id/mylist"
+        android:layout_width="match_parent"
+        android:layout_height="650dp"/>
+      <!--  android:layout_marginBottom="4dp"-->
+
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#6B52DD"
+        app:menu="@menu/menubotton"
+        android:layout_marginTop="20dp"
+
+
+        />
+
+
+</LinearLayout>

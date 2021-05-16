@@ -2,56 +2,62 @@ package com.example.capstoneapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
+//import androidx.appcompat.widget.SearchView;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-//import static com.example.capstoneapp.R.id.mysearchbar;
+public class SearchScreenV2 extends AppCompatActivity {
 
-public class SearchScreen extends AppCompatActivity {
-
-    ListView searchlist;
-    ArrayAdapter<String> adapter;
-    SearchView search;
-
+    ListView searchlist1;
+    ArrayAdapter<String> adapter1;
+    //SearchView search1;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_screen);
-
-
+        setContentView(R.layout.activity_search_screen_v2);
+        getSupportActionBar().setTitle("Search");
         ///Initialise and assign variables
-        search = (SearchView) findViewById(R.id.mysearchbar);
-        searchlist = (ListView) findViewById(R.id.mysearchlist);
+       // search1 = (SearchView) findViewById(R.id.mysearchbar);
+        searchlist1 = (ListView) findViewById(R.id.mylist);
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         ArrayList<String> CompanyNames = new ArrayList<>();
         CompanyNames.addAll(Arrays.asList(getResources().getStringArray(R.array.mycompanies)));
 
 
-        adapter = new ArrayAdapter<String>(
-                SearchScreen.this,
+        adapter1 = new ArrayAdapter<String>(
+                SearchScreenV2.this,
                 android.R.layout.simple_list_item_1,
                 CompanyNames
         );
 
-        searchlist.setAdapter(adapter);
+        searchlist1.setAdapter(adapter1);
 
+        searchlist1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent myresults = new Intent(SearchScreenV2.this, ResultScreen.class);
+                myresults.putExtra("CompanyName", searchlist1.getItemAtPosition(i).toString());
+                startActivity(myresults);
 
-
+            }
+        });
 
 
 
@@ -88,15 +94,24 @@ public class SearchScreen extends AppCompatActivity {
 
 
 
+
+
+
+
+
+
+
+
+
     }
 
-    //R.menu.search_menu
-   // @SuppressLint("ResourceType")
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.search_menu,menu);
-        MenuItem item = menu.findItem(R.id.mysearchlist);
+        MenuItem item = menu.findItem(R.id.searchcompany);
         SearchView searchView = (SearchView) item.getActionView();
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -107,7 +122,7 @@ public class SearchScreen extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                adapter.getFilter().filter(newText);
+                adapter1.getFilter().filter(newText);
 
                 return false;
             }
@@ -117,21 +132,10 @@ public class SearchScreen extends AppCompatActivity {
     }
 }
 
-/*
-*
-* <SearchView
-        android:id="@+id/mysearchbar"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="#6B52DD"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-*
-*
-*
-*
-* */
+
+
+
+
+
+
+
