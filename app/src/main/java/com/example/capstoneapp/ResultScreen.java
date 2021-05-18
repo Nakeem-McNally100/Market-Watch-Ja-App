@@ -89,7 +89,7 @@ public class ResultScreen extends AppCompatActivity  {
         Bundle myitemBundle = getIntent().getExtras();
         if(myitemBundle!=null) {
 
-            final String companySearch = myitemBundle.getString("CompanyName");
+            String companySearch = myitemBundle.getString("CompanyName");
 
             // #3A3939 nice dark grey
             // Instantiate the RequestQueue.
@@ -121,8 +121,13 @@ public class ResultScreen extends AppCompatActivity  {
 
 */
 
+            final String companydisplayname = companySearch;
+            if(companySearch.contains(" ")){
+                companySearch = companySearch.replace(" ","-");
+
+            }
             RequestQueue jsonqueue = Volley.newRequestQueue(this);
-            String sentimenturl = "http://192.168.1.7:5000/companysentiments/" + companySearch;
+            String sentimenturl = "http://192.168.1.7:5000/companyresult/" + companySearch;
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, sentimenturl, null,
                     new Response.Listener<JSONObject>() {
                         @Override
@@ -131,11 +136,15 @@ public class ResultScreen extends AppCompatActivity  {
 
 
                                 companyname = (TextView)findViewById(R.id.companyname);
-                                companyname.setText("Company: "+ companySearch);
-                                JSONArray jsonarray = response.getJSONArray("sentiments");
+                                companyname.setText("Company: "+ companydisplayname);
+                                JSONArray jsonarray = response.getJSONArray("companydata");
 
                                 JSONObject sentiments = jsonarray.getJSONObject(0);
                                 JSONObject health = jsonarray.getJSONObject(1);
+                                JSONObject prediction = jsonarray.getJSONObject(2);
+
+                                ///////////////////////////////////////
+
                                 sentimentpositive = sentiments.getInt("positive");
                                 sentimentnegative = sentiments.getInt("negative");
                                 sentimentneutral = sentiments.getInt("neutral");
@@ -157,7 +166,10 @@ public class ResultScreen extends AppCompatActivity  {
                                 double debtratioint = health.getDouble("debt ratio");
                                 double debtcoverageint = health.getDouble("debt coverage");
                                 double workingcapitalint = health.getDouble("working capital");
-
+                                ////////////////////////////////////
+                                String sevenfuture = prediction.getString("sevendayprediction");
+                                String thirtyprediction = prediction.getString("thirtydayprediction");
+                                String thirtyactual = prediction.getString("thirtydayactual");
 
                                 freecashflow = (TextView)findViewById(R.id.freecashflow13);
                                 operatingcashflow = (TextView)findViewById(R.id.operatingcashflow);
@@ -174,19 +186,19 @@ public class ResultScreen extends AppCompatActivity  {
                                 workingcapital = (TextView)findViewById(R.id.workingcapital);
 
 
-                                freecashflow.setText("Free Cashflow: "+String.valueOf(freecashflowint));
-                                operatingcashflow.setText("Operating Cashflow: "+String.valueOf(operatingcashflowint));
+                                freecashflow.setText("Free Cashflow(USD): "+String.valueOf(freecashflowint));
+                                operatingcashflow.setText("Operating Cashflow(USD): "+String.valueOf(operatingcashflowint));
                                 currentratio.setText("Current Ratio: "+String.valueOf(currentratioint));
-                                currentassets.setText("Current Assets: "+String.valueOf(currentassetsint));
-                                currentliabilities.setText("Current Liabilities: "+String.valueOf(currentliabilitiesint));
-                                noncurrentliabilities.setText("Non-current Liabilities: "+String.valueOf(noncurrentliabilitiesint));
-                                noncurrentassets.setText("Non-current Assets: "+String.valueOf(noncurrentassetsint));
+                                currentassets.setText("Current Assets(USD): "+String.valueOf(currentassetsint));
+                                currentliabilities.setText("Current Liabilities(USD): "+String.valueOf(currentliabilitiesint));
+                                noncurrentliabilities.setText("Non-current Liabilities(USD): "+String.valueOf(noncurrentliabilitiesint));
+                                noncurrentassets.setText("Non-current Assets(USD): "+String.valueOf(noncurrentassetsint));
                                 acidtest.setText("Acid Test: "+String.valueOf(acidtestint));
                                 assestturnover.setText("Assets Turnover: "+String.valueOf(assestturnoverint));
                                 grossmargin.setText("Gross Margin: "+String.valueOf(grossmarginint));
                                 debtratio.setText("Debt Ratio: "+String.valueOf(debtratioint));
                                 debtcoverage.setText("Debt Coverage: "+String.valueOf(debtcoverageint));
-                                workingcapital.setText("Working Capital: "+String.valueOf(workingcapitalint));
+                                workingcapital.setText("Working Capital(USD): "+String.valueOf(workingcapitalint));
 
 
                                 ////////////////////////////////
@@ -281,6 +293,79 @@ public class ResultScreen extends AppCompatActivity  {
 
                                 polaritychart.setChart(pie);
 
+                                //////////////////////////////////////////////////
+
+                                //String[] polarity =
+                                String [] sevenfutureArray = sevenfuture.split("-");
+                                String [] thirtypredictionArray = thirtyprediction.split("-");
+                                String [] thirtyactualArray = thirtyactual.split("-");
+
+
+                                ////////////////////////////////////////
+                                predictionChart = (LineChart) findViewById(R.id.predictionChart);
+                                //predictionChart.setDragEnabled(true);
+                                //predictionChart.setScaleEnabled(false);
+                                predictionChart.animateX(1000);
+                                predictionChart.getDescription().setText("Closing Stock price vs Days");
+
+                                ArrayList<Entry> futureValues = new ArrayList<>();
+                                ArrayList<Entry> actualyValues = new ArrayList<>();
+                                ArrayList<Entry> predictyValues = new ArrayList<>();
+
+                                int datapoints = 30;
+                                int datapoints2 = 37;
+                                for (int i = 0; i < datapoints; i++) {
+                                    actualyValues.add(new Entry(i, Float.valueOf(thirtyactualArray[i])));
+                                }
+
+                                for (int i = 0; i < datapoints; i++) {
+
+                                        predictyValues.add(new Entry(i, Float.valueOf(thirtypredictionArray[i])));
+
+
+                                }
+                                futureValues.add(new Entry(31, Float.valueOf(sevenfutureArray[0])));
+                                futureValues.add(new Entry(32, Float.valueOf(sevenfutureArray[1])));
+                                futureValues.add(new Entry(33, Float.valueOf(sevenfutureArray[2])));
+                                futureValues.add(new Entry(34, Float.valueOf(sevenfutureArray[3])));
+                                futureValues.add(new Entry(35, Float.valueOf(sevenfutureArray[4])));
+                                futureValues.add(new Entry(36, Float.valueOf(sevenfutureArray[5])));
+                                futureValues.add(new Entry(37, Float.valueOf(sevenfutureArray[6])));
+
+
+                                ArrayList<ILineDataSet> lineDatasets = new ArrayList<>();
+
+                                LineDataSet lineDataSet1 = new LineDataSet(actualyValues, "Actual");
+                                lineDataSet1.setDrawCircles(false);
+                                lineDataSet1.setColor(Color.BLUE);
+                                lineDataSet1.setLineWidth(3f);
+                                lineDataSet1.setDrawValues(false);
+                                //lineDataSet1
+
+                                LineDataSet lineDataSet2 = new LineDataSet(predictyValues, "Past Prediction");
+                                lineDataSet2.setDrawCircles(false);
+                                lineDataSet2.setColor(Color.RED);
+                                lineDataSet2.setLineWidth(3f);
+                                lineDataSet2.setDrawValues(false);
+
+
+                                LineDataSet lineDataSet3 = new LineDataSet(futureValues, "Future prediction");
+                                lineDataSet3.setDrawCircles(false);
+                                lineDataSet3.setColor(Color.GREEN);
+                                lineDataSet3.setLineWidth(3f);
+                                lineDataSet3.setDrawValues(false);
+
+                                lineDatasets.add(lineDataSet1);
+                                lineDatasets.add(lineDataSet2);
+                                lineDatasets.add(lineDataSet3);
+
+                                //////////////
+
+                                LineData data = new LineData(lineDataSet1, lineDataSet2, lineDataSet3);
+
+
+
+                                predictionChart.setData(data);
 
 
 
@@ -299,49 +384,6 @@ public class ResultScreen extends AppCompatActivity  {
             });
             jsonqueue.add(request);
 
-
-
-
-
-
-
-
-
-            ////////////////////////////////////////
-            predictionChart = (LineChart) findViewById(R.id.predictionChart);
-            predictionChart.setDragEnabled(true);
-            predictionChart.setScaleEnabled(false);
-
-            ArrayList<String> XValues = new ArrayList<>();
-            ArrayList<Entry> actualyValues = new ArrayList<>();
-            ArrayList<Entry> predictyValues = new ArrayList<>();
-            int x = 0;
-            float price = 50;
-            int datapoints = 10;
-            for (int i = 0; i < datapoints; i++) {
-                actualyValues.add(new Entry(i, price + 2));
-                predictyValues.add(new Entry(i, price + 3));
-            }
-
-            ArrayList<ILineDataSet> lineDatasets = new ArrayList<>();
-
-            LineDataSet lineDataSet1 = new LineDataSet(actualyValues, "actual");
-            lineDataSet1.setDrawCircles(false);
-            lineDataSet1.setColor(Color.BLUE);
-
-            LineDataSet lineDataSet2 = new LineDataSet(predictyValues, "predicted");
-            lineDataSet2.setDrawCircles(false);
-            lineDataSet2.setColor(Color.GREEN);
-
-            lineDatasets.add(lineDataSet1);
-            lineDatasets.add(lineDataSet2);
-
-            //////////////
-
-            LineData data = new LineData(lineDataSet1, lineDataSet2);
-
-
-            predictionChart.setData(data);
 
 
         }

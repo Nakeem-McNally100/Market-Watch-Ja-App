@@ -1,18 +1,260 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
     android:background="@drawable/gradientbk"
     tools:context=".HelpScreen">
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginEnd="10sp"
+        android:layout_marginBottom="10sp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/helptitle"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Market Watch Jamaica"
+                android:layout_marginBottom="30sp"
+                android:textColor="#00E2FF"
+                android:textSize="24sp"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:text="Public's Perception"
+                android:textColor="#00E2FF"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
+
+
+
+
+            <TextView
+                android:id="@+id/helppolarity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Polarity - The polarity analysis describes how positively or negatively a company is viewed by the public. It also shows the neutral views as well."
+                android:textColor="#00E2FF"
+                android:textSize="16sp"
+                android:layout_marginBottom="10dp"
+                android:textStyle="normal"
+                />
+
+
+            <TextView
+                android:id="@+id/helpsubjectivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Subjectivity - The subjectivity analysis describes how subjective (opinionated) or objective (factual) the views about a company are."
+                android:textColor="#00E2FF"
+                android:textSize="16sp"
+                android:layout_marginBottom="10dp"
+                android:textStyle="normal"
+                />
+
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:text="Company's Health"
+                android:textColor="#00E2FF"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/helpfreecashflow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Free Cash Flow- This is the capital a company accumulates after cash outflows that help with the company's operation and maintenance, is considered."
+                android:textColor="#00E2FF"
+                android:layout_marginBottom="10dp"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                />
+
+
+            <TextView
+                android:id="@+id/helpoperatingcashflow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Operating Cash Flows- This is the capital a company allocates for cash outflows to help with the company's operation and maintenance."
+                android:textColor="#00E2FF"
+                android:textSize="16sp"
+                android:layout_marginBottom="10dp"
+                android:textStyle="normal"
+                />
+            <TextView
+                android:id="@+id/helpcurrentratio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Current Ratio- This shows a company's ability to adhere to its financial obligations."
+                android:textColor="#00E2FF"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                />
+
+            <TextView
+                android:id="@+id/helpcurrentassests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Current Assets- This is all the assets a company will recieve in the coming year."
+                android:textColor="#00E2FF"
+                android:layout_marginBottom="10dp"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                />
+
+            <TextView
+                android:id="@+id/helpcurrentliabilities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Current Liabilities- These include the obligations the company has to pay within the coming year"
+                android:layout_marginBottom="10dp"
+                android:textColor="#00E2FF"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                />
+            <TextView
+                android:id="@+id/helpnoncurrentassests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Non-current Assets- This is the company's long-term investments that will not be recieved within the year."
+                android:textColor="#00E2FF"
+                android:layout_marginBottom="10dp"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                />
+
+            <TextView
+                android:id="@+id/helpnoncurrentliabilities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Non-current Liabilities- These are financial obligations that company will not pay  within the coming year."
+                android:textColor="#00E2FF"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                />
+
+            <TextView
+                android:id="@+id/helpacidtest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Acid Test- This is a company's ability of paying debts and obligations when due."
+                android:textColor="#00E2FF"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                />
+
+            <TextView
+                android:id="@+id/helpassestturnover"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Asset Turnover- This is how efficiently a company applies it's assets."
+                android:textColor="#00E2FF"
+                android:layout_marginBottom="10dp"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                />
+
+            <TextView
+                android:id="@+id/helpgrossmargin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gross Margin- A company with high profitability obtains a 60% margin or more."
+                android:layout_marginBottom="10dp"
+                android:textColor="#00E2FF"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                />
+
+            <TextView
+                android:id="@+id/helpdebtratio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Debt Ratio- This is the percentage of external resources over the sum of all the company's own resources."
+                android:textColor="#00E2FF"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                />
+
+
+            <TextView
+                android:id="@+id/helpdebtcoverage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Debt Coverage- This is a company's ability to cover a certain level of debt."
+                android:textColor="#00E2FF"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                />
+
+            <TextView
+                android:id="@+id/helpworkingcapital"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Working Capital- This is the current assets minus the current liabilities of a company."
+                android:textColor="#00E2FF"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                />
+
+            <TextView
+                android:id="@+id/textView222"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="30sp"
+                android:text="Stock Movement Prediction"
+                android:textAlignment="center"
+                android:textColor="#00E2FF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/helpprediction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="The stock movement prediction model was developed using past stock price data and it predicts the potential trend in the closing price of a company's stock several days into the future."
+                android:textColor="#00E2FF"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                />
+
+        </LinearLayout>
+    </RelativeLayout>
 
 
 
 
 
 
-</LinearLayout>
+</ScrollView>
